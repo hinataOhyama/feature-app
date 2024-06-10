@@ -1,0 +1,11 @@
+services:
+  app:
+    container_name: feature-app
+    image: node:20.14.0-slim
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    ports:
+      - 13000:3000
+    command: sh -c "cd app && yarn start"
+    stdin_open: true

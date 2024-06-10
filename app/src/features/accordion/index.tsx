@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Accordion,
   AccordionContent,
@@ -9,15 +8,15 @@ import data from "./data";
 
 const accordion = () => {
     return (
-      <Accordion type="single" collapsible className="w-full">
+      <Accordion type="multiple" className="max-w-96 m-auto bg-orange-700">
         {data.map((item) => (
-          <AccordionItem key={item.id} value={`item-${item.id}`}>
+          <AccordionItem key={item.id} value={`item-${item.id}`} className="p-4">
             <AccordionTrigger>{item.question}</AccordionTrigger>
             <AccordionContent>{item.answer}</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
-    )
+    );
 };
 
 export default accordion;
